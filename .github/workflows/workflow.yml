@@ -15,14 +15,21 @@ on:
         type: environment
         description: 'Environment to deploy to'
         required: true
+      matrix:
+        description: 'Matrix of values to run the job with'
+        type: string
+        required: true
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(inputs.matrix) }}
+        
     steps:
       - run: |
           echo "Log level: $LEVEL"
           echo "Environment: $ENVIRONMENT"
         env:
-          LEVEL: ${{ inputs.logLevel }}
-          ENVIRONMENT: ${{ inputs.environment }}
+          LEVEL: ${{ matrix.LEVEL }}
+          ENVIRONMENT: ${{ matrix.ENVIRONMENT }}
