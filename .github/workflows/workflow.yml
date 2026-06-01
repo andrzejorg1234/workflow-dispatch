@@ -30,6 +30,7 @@ jobs:
       - run: |
           echo "Log level: $LEVEL"
           echo "Environment: $ENVIRONMENT"
+          echo "run for matrix: ${{ matrix.version }} and ${{ matrix.os }}"
         env:
           LEVEL: ${{ matrix.LEVEL }}
           ENVIRONMENT: ${{ matrix.ENVIRONMENT }}
