@@ -34,3 +34,5 @@ jobs:
         env:
           LEVEL: ${{ matrix.LEVEL }}
           ENVIRONMENT: ${{ matrix.ENVIRONMENT }}
+          VERSION: ${{ matrix.version }}
+          OS: ${{ matrix.os }}
