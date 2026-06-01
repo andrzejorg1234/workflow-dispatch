@@ -4,7 +4,8 @@ on:
     inputs:
       logLevel:
         description: 'Log level to use'
-        type: choice        options:
+        type: choice        
+        options:
           - debug
           - info
           - warning
